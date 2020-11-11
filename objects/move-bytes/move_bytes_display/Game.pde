@@ -8,32 +8,51 @@ class Game
   int bait_pos_X ;
   int bait_pos_Y ;
   
-  Game(int _level)
+  Game()
   {   
-     spidey_img = loadImage("laDefense.jpg");  
+     spidey_img = loadImage("le_human.jpg");      
      
+     //Default Human Positon
+     spidey_pos_X = 120;
+     spidey_pos_Y = 120;
+     imageMode(CENTER);
+     image(spidey_img, spidey_pos_X, spidey_pos_Y, 50, 50); 
+     
+  }
     
-     if(level == 1)
+  void drawLevel(int _level)
+  {
+     if(_level == 1)          //LEVEL 1
      {
        spidey_pos_X = 30;
        spidey_pos_Y = 40;
      }
-     else if (level == 2)
+     else if (_level == 2)    //LEVEL 2
      {
        spidey_pos_X = 30;
        spidey_pos_Y = 40;
      }
-     else if (level == 3)
+     else if (_level == 3)    //LEVEL 3
      {
        spidey_pos_X = 30;
        spidey_pos_Y = 40;
      }
+     
+     image(spidey_img, spidey_pos_X, spidey_pos_Y, 50, 50);
+   }
+  
+  void invalidMove(int direction){
+       
   }
   
-  
-  void moveUp(){}
-  void moveLeft(){}
-  void moveDown(){}
-  void moveRight(){}
+  void drawMove(){
+     
+
+    
+      line(spidey_pos_X, spidey_pos_Y, spidey_pos_X, spidey_pos_Y+240);
+      
+      line(spidey_pos_X, spidey_pos_Y, spidey_pos_X, spidey_pos_Y+240);
+
+  }
   
 }
